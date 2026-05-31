@@ -25,6 +25,131 @@ body {
   width: 280px;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.projects {
+  background: #050505;
+  color: #f2f2f2;
+  padding: 36px 64px 44px;
+}
+
+.project-list {
+  max-width: 1080px;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.project-link {
+  display: grid;
+  grid-template-columns: 56px 300px minmax(260px, 1fr) 48px;
+  gap: 32px;
+  align-items: center;
+  min-height: 58px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-number,
+.project-name {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
+}
+
+.project-number {
+  color: #b8b8b8;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.project-name {
+  color: #f4f4f4;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.project-copy {
+  color: #cfcfcf;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.project-arrow {
+  position: relative;
+  justify-self: end;
+  width: 40px;
+  height: 1px;
+  background: #f2f2f2;
+  transition: transform 0.2s ease;
+}
+
+.project-arrow::after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+  content: "";
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: center;
+}
+
+.project-link:hover .project-arrow {
+  transform: translateX(8px);
+}
+
+.project-link:hover .project-name,
+.project-link:hover .project-copy {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .projects {
+    padding: 44px 24px 54px;
+  }
+
+  .project-link {
+    grid-template-columns: 40px minmax(0, 1fr) 36px;
+    gap: 8px 18px;
+    min-height: 0;
+    padding: 17px 0;
+  }
+
+  .project-number {
+    align-self: start;
+    padding-top: 8px;
+    font-size: 13px;
+  }
+
+  .project-name {
+    font-size: 26px;
+  }
+
+  .project-copy {
+    grid-column: 2;
+    font-size: 12px;
+  }
+
+  .project-arrow {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    width: 30px;
+  }
+}
+
 .footer {
   padding: 60px 0 20px 0;
   background: #2e2e2f;
