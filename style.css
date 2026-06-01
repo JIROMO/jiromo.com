@@ -4,25 +4,86 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #252526;
-  background-size: 30%;
   min-width: 1200px;
+  /* faint neon grid — seamless repeating pattern (no tiling seams) */
+  background-color: #050507;
+  background-image: linear-gradient(
+      rgba(92, 242, 255, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(92, 242, 255, 0.045) 1px, transparent 1px);
+  background-size: 58px 58px;
+}
+
+/* neon glow — one fixed full-viewport layer, so it never shows tiling seams */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+      60% 50% at 18% 22%,
+      rgba(92, 242, 255, 0.2),
+      transparent 70%
+    ),
+    radial-gradient(
+      55% 50% at 85% 78%,
+      rgba(176, 107, 255, 0.2),
+      transparent 70%
+    ),
+    radial-gradient(
+      45% 40% at 70% 12%,
+      rgba(92, 242, 255, 0.1),
+      transparent 70%
+    );
 }
 @media (max-width: 767px) {
   body {
     min-width: 375px;
+    background-size: 48px 48px;
   }
 }
 
 .main {
+  position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
 .logo {
+  position: relative;
+  z-index: 1;
   width: 280px;
+  filter: drop-shadow(0 0 16px rgba(92, 242, 255, 0.6))
+    drop-shadow(0 0 42px rgba(176, 107, 255, 0.4));
+  animation: logoFlicker 7s steps(1) infinite;
+}
+
+@keyframes logoFlicker {
+  0%,
+  41%,
+  43%,
+  92%,
+  94%,
+  100% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.74;
+  }
+  93% {
+    opacity: 0.85;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo {
+    animation: none;
+  }
 }
 
 .visually-hidden {
@@ -38,7 +99,7 @@ body {
 }
 
 .projects {
-  background: #050505;
+  background: transparent;
   color: #f2f2f2;
   padding: 36px 64px 44px;
 }
@@ -51,69 +112,93 @@ body {
 }
 
 .project-link {
+  position: relative;
   display: grid;
-  grid-template-columns: 56px 300px minmax(260px, 1fr) 48px;
+  grid-template-columns: 300px minmax(260px, 1fr) 48px;
   gap: 32px;
   align-items: center;
   min-height: 58px;
+  padding: 26px 0;
   color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: opacity 0.35s ease;
 }
 
-.project-number,
-.project-name {
-  font-family: "Anonymous Pro", monospace;
-  font-weight: 400;
+/* neon underline that sweeps in on hover */
+.project-link::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  bottom: -1px;
+  height: 1px;
+  width: 0;
+  background: #5cf2ff;
+  box-shadow: 0 0 8px #5cf2ff, 0 0 18px rgba(92, 242, 255, 0.6);
+  transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* dim the other rows while one is hovered */
+.project-list:hover .project-link {
+  opacity: 0.4;
+}
+
+.project-list:hover .project-link:hover {
+  opacity: 1;
+}
+
+.project-link:hover::before {
+  width: calc(100% + 32px);
 }
 
 .project-number {
-  color: #b8b8b8;
-  font-size: 15px;
-  line-height: 1;
+  display: none;
 }
 
 .project-name {
+  font-family: "Anonymous Pro", monospace;
+  font-weight: 400;
   color: #f4f4f4;
   font-size: 30px;
   line-height: 1.2;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+.project-link:hover .project-name {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(92, 242, 255, 0.7),
+    0 0 26px rgba(92, 242, 255, 0.4);
 }
 
 .project-copy {
-  color: #cfcfcf;
+  color: #b9b9c2;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.6;
+  transition: color 0.35s ease;
+}
+
+.project-link:hover .project-copy {
+  color: #fff;
 }
 
 .project-arrow {
-  position: relative;
   justify-self: end;
-  width: 40px;
-  height: 1px;
-  background: #f2f2f2;
-  transition: transform 0.2s ease;
+  font-size: 18px;
+  line-height: 1;
+  color: #888;
+  transition: transform 0.35s ease, color 0.35s ease,
+    text-shadow 0.35s ease;
 }
 
 .project-arrow::after {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-top: 1px solid #f2f2f2;
-  border-right: 1px solid #f2f2f2;
-  content: "";
-  transform: translateY(-50%) rotate(45deg);
-  transform-origin: center;
+  content: "→";
 }
 
 .project-link:hover .project-arrow {
   transform: translateX(8px);
-}
-
-.project-link:hover .project-name,
-.project-link:hover .project-copy {
-  color: #fff;
+  color: #5cf2ff;
+  text-shadow: 0 0 8px rgba(92, 242, 255, 0.8);
 }
 
 @media (max-width: 767px) {
@@ -122,16 +207,10 @@ body {
   }
 
   .project-link {
-    grid-template-columns: 40px minmax(0, 1fr) 36px;
+    grid-template-columns: minmax(0, 1fr) 36px;
     gap: 8px 18px;
     min-height: 0;
     padding: 17px 0;
-  }
-
-  .project-number {
-    align-self: start;
-    padding-top: 8px;
-    font-size: 13px;
   }
 
   .project-name {
@@ -139,20 +218,22 @@ body {
   }
 
   .project-copy {
-    grid-column: 2;
+    grid-column: 1;
     font-size: 12px;
   }
 
   .project-arrow {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 1 / span 2;
     width: 30px;
   }
 }
 
 .footer {
+  position: relative;
   padding: 60px 0 20px 0;
-  background: #2e2e2f;
+  background: transparent;
+  border-top: 1px solid rgba(92, 242, 255, 0.12);
 }
 
 .footer-blocks {
@@ -203,21 +284,23 @@ body {
   margin: 0;
   color: #fff;
   padding: 20px 0 0 0;
-  border-top: 1px solid #252526;
+  border-top: 1px solid rgba(92, 242, 255, 0.15);
 }
 
 .legal-header {
   padding: 40px 20px 20px;
   text-align: center;
-  background: #252526;
+  background: transparent;
 }
 
 .legal-logo {
   width: 160px;
+  filter: drop-shadow(0 0 14px rgba(92, 242, 255, 0.55))
+    drop-shadow(0 0 36px rgba(176, 107, 255, 0.35));
 }
 
 .legal-main {
-  background: #252526;
+  background: transparent;
   padding: 0 20px 60px;
 }
 
@@ -288,8 +371,11 @@ body {
   font-size: 12px;
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .legal-nav a:hover {
-  text-decoration: underline;
+  color: #5cf2ff;
+  text-shadow: 0 0 8px rgba(92, 242, 255, 0.7),
+    0 0 20px rgba(92, 242, 255, 0.4);
 }
