@@ -2,6 +2,7 @@
   "name": "jiromo-com",
   "private": true,
   "scripts": {
+    "build": "echo \"no build step required\"",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
   },
