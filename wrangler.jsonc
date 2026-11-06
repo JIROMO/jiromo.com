@@ -1,9 +1,28 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "jiromo-com",
+  "account_id": "64d76a10fff6e7e52e63a365ce399877",
+  "main": "src/index.ts",
   "compatibility_date": "2026-07-21",
+  "vars": {
+    "TURNSTILE_HOSTNAMES": "jiromo.com",
+    "CONTACT_TO": "s.moriya@jiromo.com",
+    "CONTACT_FROM": "no-reply@contact.jiromo.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jiromo-com",
+      "database_id": "da398643-7cbb-48fa-abef-437424db23ad",
+      "migrations_dir": "./migrations"
+    }
+  ],
+  "send_email": [{ "name": "EMAIL" }],
   "assets": {
     "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"],
     "not_found_handling": "404-page"
-  }
+  },
+  "observability": { "enabled": true }
 }

@@ -8,3 +8,10 @@ package.json
 package-lock.json
 .gitignore
 .assetsignore
+src
+migrations
+tsconfig.json
+worker-configuration.d.ts
+.dev.vars
+.sf
+README.md

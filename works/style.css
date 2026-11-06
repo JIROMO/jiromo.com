@@ -55,12 +55,35 @@ button:focus-visible {
 }
 
 .site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
   padding-block: 28px 40px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.site-nav a {
+  color: var(--mute);
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(92, 242, 255, 0.6);
 }
 
 .site-header img {
   display: block;
-  width: 124px;
+  width: 140px;
+  height: auto;
   filter: drop-shadow(0 0 12px rgba(92, 242, 255, 0.5))
     drop-shadow(0 0 30px rgba(176, 107, 255, 0.3));
 }

@@ -1,0 +1,61 @@
+# 株式会社JIROMO
+
+> 株式会社JIROMOは、会員基盤や業務システム、Salesforce連携、Webサイト、ECの受託開発を行う日本の会社です。設計から実装、公開後の運用と改善まで担当します。自社プロダクトの開発と運用も行っています。
+
+- 会社名: 株式会社JIROMO
+- 代表者: 守屋 慎二郎
+- 設立: 2023年1月
+- 法人番号: 4010901052399
+- お問い合わせ: https://jiromo.com/contact/
+
+制作実績には法人になる以前の開発実績も含みます。取引先名は公開していません。
+
+## 主なページ
+
+- [トップ](https://jiromo.com/): 事業内容、開発の特徴、主な制作実績、会社概要
+- [制作実績](https://jiromo.com/works/): 期間、担当、使用技術を含む事例の一覧
+- [お問い合わせ](https://jiromo.com/contact/): 開発のご相談やお見積りのフォーム
+
+## 事業内容
+
+- 会員基盤・業務システム: 入会の申込や決済、会員マイページ、社内の管理システムの開発
+- Salesforce連携: Salesforce上の更新内容をWebへ配信する仕組み、Salesforce上のポータル、外部サービスとの連携
+- Webサイト・EC: 企業サイトやECの構築、ヘッドレスCMSや多言語への対応
+
+## 会員基盤・業務システム
+
+- 医療業界向け 顧客データ分析Webアプリ: 顧客との接点をデータで分析するWebアプリです。立ち上げ期から関わり、分析画面とデータ取り込みのバッチを開発しています。（Python、Django / Redis / Heroku）
+- フィットネスチェーンの会員マイページ: 入会後の会員が手続きや支払いの確認を行うマイページと、関連する集計処理です。（TypeScript、NestJS / PostgreSQL / Heroku / Docker）
+- フィットネスチェーンの店舗ポータルと請求処理: 店舗の担当者が使うSalesforce上のポータルと、請求に関わる処理です。（Apex、Salesforce LWC）
+- フィットネスチェーンのWeb入会フォーム: 複数ブランドのジムで使う、個人と法人のWeb入会フォームです。申込内容を決済と会員管理のサービスへつなぎます。（Python、Django REST Framework / React / Heroku）
+- フィットネスチェーンのFC開業シミュレーター: FC開業を検討する方が、初期費用や収支、回収期間を試算できるツールです。（TypeScript、NestJS / TypeORM / PostgreSQL / Heroku）
+- 会員制の顧客ポータル: 顧客が情報の閲覧やセミナー申込、各種手続きを行うログイン制のポータルです。（PHP、Laravel / Vue / Docker / Heroku）
+- コンディショニングスタジオの管理システム: スタジオが自社で使う管理システムです。会員や販売メニュー、決済、レポートを扱います。（TypeScript、Next.js / Prisma / PostgreSQL / Stripe / Claude API）
+- 教育事業の講師コミュニティ: 全国の教室の講師が使う、スマートフォン向けのコミュニティサイトです。基幹データを持つSalesforceや学習システムとつなぎました。（TypeScript、React / Vite / Hono / Cloudflare Workers）
+
+## Salesforceと連携する情報サイト
+
+- クラウドベンダーの顧客向け活用サイト: 製品の活用を助けるガイド記事や特集を届ける情報サイトです。（Python、Django / Heroku）
+- SaaS企業のカスタマーサイト: 利用者向けのサポート記事や製品情報を届けるカスタマーサイトです。（Python、Django / Algolia / Heroku）
+- 金融分野の団体サイト: 消費者向け、企業情報、採用の各サイトを配信するWebアプリです。（TypeScript、NestJS / PostgreSQL / Algolia / AWS S3 / Heroku）
+- クラウドベンダーのナレッジサイト: 社内外の知見を探すための、Salesforce上のナレッジサイトです。検索のしやすさを中心に改善を重ねました。（Apex、Salesforce LWC）
+
+## Webサイト・EC
+
+- コンディショニングスタジオの公式サイト: スタジオの公式サイトと予約導線です。（TypeScript、NestJS / Heroku）
+- キャラクターの紹介サイト: キャラクターの活動を紹介するサイトです。SNSアプリのような画面で、投稿やストーリーを見られます。（PHP、microCMS）
+- 企業サイト（日英）: microCMSで更新できる日英対応の企業サイトです。実装から本番公開の手順づくりまで担当しました。（PHP、microCMS）
+- ファッションブランドのShopify EC: Figmaのデザインを実測して、Shopifyテーマに忠実に実装しました。GitHubのIssueとレビューで進めるチーム開発です。（Liquid、Shopify）
+
+## 自社プロダクト
+
+- [Docchitte](https://docchitte.com): 2枚の画像と質問を入れるだけで作れる、2択投票のサービスです。ログインなしで使えます。（TypeScript、Hono / Cloudflare Workers / D1 / R2）
+- [Monokiro](https://monokiro.com): ものづくりの過程を記録して共有するコミュニティです。（TypeScript、React / Hono / Drizzle / Cloudflare Workers）
+- [Displave](https://displave.com): macOSのウィンドウ配置を保存し、ワンクリックで元に戻せるメニューバーアプリです。（Swift、AppKit / Cloudflare Workers）
+- [Millrect](https://millrect.com): 2Dの図面から3Dモデルを起こす、図面中心のCADです。ブラウザで動き、AIエージェントからも操作できます。（JavaScript、SVG / Three.js / Cloudflare Workers / MCP）
+- [Profondien EC](https://profondien.com): 自社のレザーブランドのECです。（Liquid、Shopify）
+
+## その他
+
+- [プライバシーポリシー](https://jiromo.com/privacy)
+- [利用規約](https://jiromo.com/terms)

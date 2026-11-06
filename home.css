@@ -5,6 +5,7 @@
   --fg: #eef1f4;
   --mute: #aab1bb;
   --cyan: #5cf2ff;
+  --error: #ff9d8a;
   --mono: "Anonymous Pro", ui-monospace, Menlo, monospace;
   --ui: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
     "Segoe UI", Roboto, sans-serif;
@@ -87,7 +88,8 @@ p {
 
 .logo {
   display: block;
-  width: 124px;
+  width: 140px;
+  height: auto;
   filter: drop-shadow(0 0 12px rgba(92, 242, 255, 0.5))
     drop-shadow(0 0 30px rgba(176, 107, 255, 0.3));
 }
@@ -352,6 +354,315 @@ p {
 .contact p {
   max-width: 40em;
   margin-bottom: 24px;
+  color: var(--mute);
+}
+
+/* お問い合わせフォーム */
+.contact-page {
+  max-width: 640px;
+  padding-block: clamp(32px, 7vw, 72px) 72px;
+}
+
+.contact-page h1 {
+  margin: 0 0 16px;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.3;
+}
+
+.contact-lead {
+  margin-bottom: 40px;
+  color: var(--mute);
+}
+
+.contact-form {
+  display: grid;
+  gap: 24px;
+}
+
+.contact-form[hidden],
+.contact-done[hidden],
+.field-error[hidden],
+.form-error[hidden] {
+  display: none;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.required {
+  margin-left: 8px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.picker-button,
+.field textarea {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #4b515c;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--fg);
+  font: 16px/1.6 var(--ui);
+}
+
+.field-label {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* プルオーバー */
+.picker {
+  position: relative;
+}
+
+.picker-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.is-placeholder {
+  color: var(--mute);
+}
+
+.picker-chevron {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin: -3px 3px 0 0;
+  border-right: 1.5px solid var(--mute);
+  border-bottom: 1.5px solid var(--mute);
+  transform: rotate(45deg);
+  transition: transform 0.15s ease;
+}
+
+.picker-button[aria-expanded="true"] .picker-chevron {
+  margin-top: 3px;
+  transform: rotate(-135deg);
+}
+
+.picker-button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+  border-color: var(--cyan);
+}
+
+.picker-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  max-height: 280px;
+  margin: 0;
+  padding: 6px;
+  overflow-y: auto;
+  border: 1px solid #4b515c;
+  border-radius: 6px;
+  background: #1e2127;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  list-style: none;
+}
+
+.picker-list[hidden] {
+  display: none;
+}
+
+.picker-list [role="option"] {
+  position: relative;
+  padding: 9px 32px 9px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.picker-list .is-active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.picker-list [aria-selected="true"] {
+  color: var(--cyan);
+}
+
+.picker-list [aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 5px;
+  height: 10px;
+  margin-top: -7px;
+  border-right: 1.5px solid var(--cyan);
+  border-bottom: 1.5px solid var(--cyan);
+  transform: rotate(45deg);
+}
+
+.field textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+  border-color: var(--cyan);
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.field .check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.check input {
+  width: 18px;
+  height: 18px;
+  margin: 5px 0 0;
+  accent-color: var(--cyan);
+  flex: none;
+}
+
+.check a {
+  text-underline-offset: 4px;
+}
+
+.field-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.field-error,
+.form-error {
+  margin-top: 6px;
+  color: var(--error);
+  font-size: 14px;
+}
+
+.turnstile {
+  min-height: 65px;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+}
+
+.contact-form .button {
+  min-width: 180px;
+  cursor: pointer;
+  font-family: var(--ui);
+}
+
+.contact-form .button:disabled,
+.contact-form .button:disabled:hover {
+  border-color: var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+  color: var(--mute);
+  cursor: not-allowed;
+}
+
+.submit-hint {
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.submit-hint[hidden] {
+  display: none;
+}
+
+.contact-done:focus {
+  outline: none;
+}
+
+.contact-done h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.contact-done p {
+  color: var(--mute);
+}
+
+/* プライバシーポリシー、利用規約 */
+.legal-main {
+  padding-block: clamp(32px, 7vw, 72px) 72px;
+}
+
+.legal-content {
+  max-width: 720px;
+}
+
+.legal-content h1 {
+  margin: 0 0 24px;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.3;
+}
+
+.legal-content h2 {
+  margin: 40px 0 12px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.legal-content p,
+.legal-content li {
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.legal-content ul,
+.legal-content ol {
+  margin: 12px 0;
+  padding-left: 1.4em;
+}
+
+.legal-content li + li {
+  margin-top: 8px;
+}
+
+.legal-content a {
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover {
+  color: var(--cyan);
+}
+
+.legal-meta {
+  margin: 0 0 8px;
+}
+
+.legal-enacted {
+  margin-top: 48px;
   color: var(--mute);
 }
 
