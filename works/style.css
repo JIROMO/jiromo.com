@@ -1,0 +1,393 @@
+:root {
+  --ink: #16181d;
+  --panel: #1e2127;
+  --line: #2f343d;
+  --grid: rgba(255, 255, 255, 0.018);
+  --fg: #eef1f4;
+  --mute: #aab1bb;
+  --cyan: #5cf2ff;
+  --blue: #5a9bff;
+  --mark: #ffc56b;
+  --mono: "Anonymous Pro", ui-monospace, Menlo, monospace;
+  --ui: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP",
+    "Segoe UI", Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  background: var(--ink);
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  font: 16px/1.75 var(--ui);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--ink);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 58px 58px;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  padding-block: 28px 40px;
+}
+
+.site-header img {
+  display: block;
+  width: 124px;
+  filter: drop-shadow(0 0 12px rgba(92, 242, 255, 0.5))
+    drop-shadow(0 0 30px rgba(176, 107, 255, 0.3));
+}
+
+h1 {
+  font-size: clamp(22px, 6vw, 46px);
+  line-height: 1.3;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+
+.lead {
+  max-width: 62ch;
+  color: var(--mute);
+  margin: 0 0 4px;
+}
+
+.note {
+  font-size: 12.5px;
+  color: var(--mute);
+  margin: 0 0 40px;
+}
+
+.eyebrow {
+  font: 700 13px var(--mono);
+  letter-spacing: 0.1em;
+  color: var(--cyan);
+  margin: 0 0 8px;
+}
+
+/* 年表 */
+.gantt {
+  display: grid;
+  gap: 3px;
+  margin: 0 0 12px;
+}
+
+.g-row {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 2px 0;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+a.g-row:hover .g-name {
+  color: var(--cyan);
+}
+
+.g-name {
+  font-size: 13.5px;
+  line-height: 1.45;
+  min-width: 0;
+}
+
+.track {
+  position: relative;
+  height: 14px;
+  background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 12.5% 100%;
+  border-right: 1px solid var(--line);
+}
+
+.track i {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
+.track i.own {
+  background: var(--cyan);
+}
+
+.track u {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: 50%;
+  width: 1px;
+  background: var(--mark);
+  opacity: 0.75;
+}
+
+.years {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  font: 12px var(--mono);
+  color: var(--mute);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 13px;
+  color: var(--mute);
+  margin: 0 0 56px;
+}
+
+.legend span::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 8px;
+  border-radius: 2px;
+  margin-right: 6px;
+  background: var(--c);
+}
+
+/* 強み */
+.points {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0 0 56px;
+}
+
+.points h2 {
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: var(--cyan);
+}
+
+.points p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--mute);
+}
+
+/* 絞り込み */
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--ink);
+  padding-block: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.chip {
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--fg);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* 事例 */
+.group {
+  padding-top: 40px;
+}
+
+.group > h2 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+
+.group > p {
+  color: var(--mute);
+  margin: 0 0 8px;
+  max-width: 62ch;
+}
+
+.case {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 6px 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.period {
+  font: 15px/1.5 var(--mono);
+  color: var(--cyan);
+  font-variant-numeric: tabular-nums;
+}
+
+.period small {
+  display: block;
+  font: 12.5px/1.5 var(--ui);
+  color: var(--mute);
+  margin-top: 2px;
+}
+
+.case h3 {
+  font-size: 19px;
+  line-height: 1.45;
+  margin: 0 0 6px;
+}
+
+.case h3 a {
+  text-underline-offset: 4px;
+}
+
+.case p {
+  margin: 0 0 10px;
+  max-width: 64ch;
+}
+
+.case ul {
+  margin: 0 0 10px;
+  padding-left: 1.2em;
+  color: var(--mute);
+  font-size: 14.5px;
+  max-width: 64ch;
+}
+
+.case .tech {
+  font: 13.5px/1.6 var(--mono);
+  color: var(--mute);
+  margin: 0;
+}
+
+/* 会社情報とフッター */
+.about {
+  margin-top: 64px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.about h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.about dl {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 4px 16px;
+  margin: 12px 0 20px;
+  font-size: 15px;
+}
+
+.about dt {
+  color: var(--mute);
+}
+
+.about dd {
+  margin: 0;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 22px;
+  border-radius: 4px;
+  background: var(--cyan);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  margin-top: 64px;
+  padding-block: 24px 40px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--mute);
+}
+
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--cyan);
+}
+
+.site-footer .copyright {
+  margin: 0 0 0 auto;
+  font-family: var(--mono);
+}
+
+@media (max-width: 720px) {
+  .g-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+    padding-bottom: 6px;
+  }
+
+  .g-head .g-name {
+    display: none;
+  }
+
+  .points {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .case {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-footer .copyright {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.case .tech b {
+  color: var(--fg);
+  font-weight: 700;
+}

@@ -1,18 +1,31 @@
+<!doctype html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="favicon.png" />
+    <link rel="icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="JIROMO WEB" />
-    <meta property="og:title" content="JIROMO" />
+    <meta
+      name="description"
+      content="株式会社JIROMOは、会員基盤や業務システム、Salesforce連携、Webサイト、ECの受託開発を行う会社です。設計から実装、公開後の運用と改善まで担当します。"
+    />
+    <meta
+      property="og:title"
+      content="株式会社JIROMO | 業務システムとWebサービスの受託開発"
+    />
+    <meta
+      property="og:description"
+      content="会員基盤や業務システム、Salesforce連携、Webサイト、ECの受託開発を行う会社です。設計から実装、公開後の運用と改善まで担当します。"
+    />
+    <meta property="og:url" content="https://jiromo.com/" />
     <meta property="og:image" content="https://jiromo.com/ogp.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    <title>JIROMO</title>
+    <link rel="canonical" href="https://jiromo.com/" />
+    <title>株式会社JIROMO | 業務システムとWebサービスの受託開発</title>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Anonymous+Pro&amp;display=swap"
+      href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700&amp;display=swap"
     />
-    <link href="style.css?20260531" rel="stylesheet" />
+    <link href="/home.css?20261106d" rel="stylesheet" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-QKCX88HHFK"
@@ -27,82 +40,268 @@
     </script>
   </head>
   <body>
-    <div class="main">
-      <img class="logo" src="logo.svg" alt="JIROMO" />
-    </div>
-    <section class="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading" class="visually-hidden">プロジェクト</h2>
-      <ol class="project-list">
-        <li class="project-item">
-          <a
-            class="project-link"
-            href="https://profondien.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="project-number">01</span>
-            <span class="project-name">Profondien</span>
-            <span class="project-copy">ものと、人の関係を深く</span>
-            <span class="project-arrow" aria-hidden="true"></span>
-          </a>
-        </li>
-        <li class="project-item">
-          <a
-            class="project-link"
-            href="https://millrect.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="project-number">02</span>
-            <span class="project-name">Millrect</span>
-            <span class="project-copy">軽量な2D作図</span>
-            <span class="project-arrow" aria-hidden="true"></span>
-          </a>
-        </li>
-        <li class="project-item">
-          <a
-            class="project-link"
-            href="https://displave.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="project-number">03</span>
-            <span class="project-name">Displave</span>
-            <span class="project-copy">ウィンドウ配置を記憶</span>
-            <span class="project-arrow" aria-hidden="true"></span>
-          </a>
-        </li>
-      </ol>
-    </section>
-    <footer class="footer">
-      <div class="footer-blocks">
-        <div class="footer-block">
-          <p class="footer-block-head">会社概要</p>
-          <ul class="footer-block-list">
-            <li>会社名: 株式会社JIROMO</li>
-            <li>法人番号: 4010901052399</li>
+    <div class="wrap">
+      <header class="site-header">
+        <a href="/"><img class="logo" src="/logo.svg" alt="JIROMO" /></a>
+        <nav class="site-nav" aria-label="ページ内の主な項目">
+          <a href="#services">事業内容</a>
+          <a href="/works/">制作実績</a>
+          <a href="#company">会社概要</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <h1>業務システムとWebサービスの受託開発</h1>
+          <p>
+            株式会社JIROMOは、会員基盤や業務システム、Salesforce連携、Webサイト、ECの開発を行う会社です。設計から実装、公開後の運用と改善まで担当します。
+          </p>
+          <div class="actions">
+            <a
+              class="button primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSePzFD91qQ2AhR9qSIAHOHuMl9H_dMMjFWwF4TX6XczFYM-_Q/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              >開発について相談する</a
+            >
+            <a class="button" href="/works/">制作実績を見る</a>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="section-head">
+            <p class="eyebrow">SERVICES</p>
+            <h2>事業内容</h2>
+          </div>
+          <div class="rows">
+            <article class="row">
+              <h3>会員基盤・業務システム</h3>
+              <div>
+                <p>
+                  入会の申込や決済、会員マイページ、社内の管理システムなど、日々の業務を支えるシステムを開発します。
+                </p>
+                <p class="tech">
+                  Python / Django, TypeScript / NestJS, Next.js, PHP / Laravel
+                </p>
+              </div>
+            </article>
+            <article class="row">
+              <h3>Salesforce連携</h3>
+              <div>
+                <p>
+                  担当者がSalesforce上で更新した内容をWebへ配信する仕組みや、Salesforce上のポータル、外部サービスとの連携を開発します。
+                </p>
+                <p class="tech">Apex, Salesforce LWC, Django, NestJS, Heroku</p>
+              </div>
+            </article>
+            <article class="row">
+              <h3>Webサイト・EC</h3>
+              <div>
+                <p>
+                  デザインを忠実に実装し、更新しやすい企業サイトやECを構築します。ヘッドレスCMSや多言語にも対応します。
+                </p>
+                <p class="tech">Shopify, microCMS, NestJS, PHP</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="eyebrow">APPROACH</p>
+            <h2>開発の特徴</h2>
+          </div>
+          <div class="rows">
+            <article class="row">
+              <h3>長く運用する</h3>
+              <p>
+                公開後も長く運用を続け、機能追加と改善を重ねています。
+              </p>
+            </article>
+            <article class="row">
+              <h3>既存のサービスとつなぐ</h3>
+              <p>
+                Salesforce、hacomono、Stripe、Fincode、Moodle、LINE、Shopify、microCMSとの連携や構築の経験があります。
+              </p>
+            </article>
+            <article class="row">
+              <h3>全工程を少人数で担う</h3>
+              <p>
+                単独または少人数で、画面、API、データベース、バッチ、デプロイまでを担当します。チーム開発ではフロントエンドなど特定領域も担います。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="works">
+          <div class="section-head">
+            <p class="eyebrow">WORKS</p>
+            <h2>主な制作実績</h2>
+          </div>
+          <div>
+            <div class="rows">
+              <article class="work">
+                <p class="period">2019.12 - 2026.11</p>
+                <div>
+                  <h3>医療業界向け 顧客データ分析Webアプリ</h3>
+                  <p>
+                    顧客との接点をデータで分析するWebアプリです。立ち上げ期から関わり、分析画面とデータ取り込みのバッチを開発しています。
+                  </p>
+                  <p class="tech"><b>Python</b> ・ Django / Redis / Heroku</p>
+                </div>
+              </article>
+              <article class="work">
+                <p class="period">2022.08 - 2026.01</p>
+                <div>
+                  <h3>クラウドベンダーのナレッジサイト</h3>
+                  <p>
+                    社内外の知見を探すための、Salesforce上のナレッジサイトです。検索のしやすさを中心に改善を重ねました。
+                  </p>
+                  <p class="tech"><b>Apex</b> ・ Salesforce LWC</p>
+                </div>
+              </article>
+              <article class="work">
+                <p class="period">2022.12 - 2026.05</p>
+                <div>
+                  <h3>フィットネスチェーンの会員マイページ</h3>
+                  <p>
+                    入会後の会員が手続きや支払いの確認を行うマイページと、関連する集計処理です。
+                  </p>
+                  <p class="tech">
+                    <b>TypeScript</b> ・ NestJS / PostgreSQL / Heroku / Docker
+                  </p>
+                </div>
+              </article>
+              <article class="work">
+                <p class="period">2026.06 - 2026.10</p>
+                <div>
+                  <h3>教育事業の講師コミュニティ</h3>
+                  <p>
+                    全国の教室の講師が使う、スマートフォン向けのコミュニティサイトです。基幹データを持つSalesforceや学習システムとつなぎました。
+                  </p>
+                  <p class="tech">
+                    <b>TypeScript</b> ・ React / Vite / Hono / Cloudflare
+                    Workers
+                  </p>
+                </div>
+              </article>
+              <article class="work">
+                <p class="period">2026.06 - 2026.09</p>
+                <div>
+                  <h3>ファッションブランドのShopify EC</h3>
+                  <p>
+                    Figmaのデザインを実測して、Shopifyテーマに忠実に実装しました。GitHubのIssueとレビューで進めるチーム開発です。
+                  </p>
+                  <p class="tech"><b>Liquid</b> ・ Shopify</p>
+                </div>
+              </article>
+            </div>
+            <p class="note">※法人になる以前の開発実績も含みます。</p>
+            <a class="more" href="/works/">すべての制作実績を見る</a>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-head">
+            <p class="eyebrow">PRODUCTS</p>
+            <h2>自社プロダクト</h2>
+          </div>
+          <ul class="products">
             <li>
-              代表者:
+              <a
+                href="https://profondien.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="product-name">Profondien</span>
+                <span>ものと、人の関係を深くする</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://millrect.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="product-name">Millrect</span>
+                <span>軽量な2D作図</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://displave.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="product-name">Displave</span>
+                <span>ウィンドウ配置を記憶</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://monokiro.com/" target="_blank" rel="noopener noreferrer">
+                <span class="product-name">Monokiro</span>
+                <span>ものづくりの記録</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://docchitte.com/" target="_blank" rel="noopener noreferrer">
+                <span class="product-name">Docchitte</span>
+                <span>2枚で、選ぶ</span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="company">
+          <div class="section-head">
+            <p class="eyebrow">COMPANY</p>
+            <h2>会社概要</h2>
+          </div>
+          <dl class="company">
+            <dt>会社名</dt>
+            <dd>株式会社JIROMO</dd>
+            <dt>法人番号</dt>
+            <dd>4010901052399</dd>
+            <dt>代表者</dt>
+            <dd>
               <a
                 href="https://shinjiro-moriya.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 >守屋 慎二郎</a
               >
-            </li>
-            <li>設立年月: 2023年1月</li>
-          </ul>
-        </div>
-      </div>
-      <nav class="legal-nav">
+            </dd>
+            <dt>設立年月</dt>
+            <dd>2023年1月</dd>
+            <dt>事業内容</dt>
+            <dd>受託開発、自社プロダクトの開発と運用</dd>
+          </dl>
+        </section>
+
+        <section class="contact">
+          <h2>開発のご相談</h2>
+          <p>
+            新規の開発から、既存システムの機能追加や改善まで、お問い合わせフォームよりご連絡ください。
+          </p>
+          <a
+            class="button primary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSePzFD91qQ2AhR9qSIAHOHuMl9H_dMMjFWwF4TX6XczFYM-_Q/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            >開発について相談する</a
+          >
+        </section>
+      </main>
+
+      <footer class="site-footer">
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSePzFD91qQ2AhR9qSIAHOHuMl9H_dMMjFWwF4TX6XczFYM-_Q/viewform"
           target="_blank"
           rel="noopener noreferrer"
           >お問い合わせ</a
         >
-        <a href="privacy.html">プライバシーポリシー</a>
-        <a href="terms.html">利用規約</a>
+        <a href="/privacy.html">プライバシーポリシー</a>
+        <a href="/terms.html">利用規約</a>
         <a
           href="https://jiromonium.com"
           target="_blank"
@@ -115,8 +314,8 @@
           rel="noopener noreferrer"
           >GitHub</a
         >
-      </nav>
-      <p class="copyright">&copy; JIROMO, inc.</p>
-    </footer>
+        <p class="copyright">&copy; JIROMO, inc.</p>
+      </footer>
+    </div>
   </body>
 </html>
