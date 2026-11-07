@@ -51,7 +51,6 @@
 
 - [Docchitte](https://docchitte.com): 2枚の画像と質問を入れるだけで作れる、2択投票のサービスです。ログインなしで使えます。（TypeScript、Hono / Cloudflare Workers / D1 / R2）
 - [Monokiro](https://monokiro.com): ものづくりの過程を記録して共有するコミュニティです。（TypeScript、React / Hono / Drizzle / Cloudflare Workers）
-- [Displave](https://displave.com): macOSのウィンドウ配置を保存し、ワンクリックで元に戻せるメニューバーアプリです。（Swift、AppKit / Cloudflare Workers）
 - [Millrect](https://millrect.com): 2Dの図面から3Dモデルを起こす、図面中心のCADです。ブラウザで動き、AIエージェントからも操作できます。（JavaScript、SVG / Three.js / Cloudflare Workers / MCP）
 - [Profondien EC](https://profondien.com): 自社のレザーブランドのECです。（Liquid、Shopify）
 
